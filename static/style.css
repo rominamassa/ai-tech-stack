@@ -101,4 +101,23 @@ button {
   color: #fff;
   border: none;
   border-radius: 6px;
-  padding: 12px 
+  padding: 12px 25px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s, transform 0.3s;
+  outline: none;
+}
+
+button:hover {
+  background-color: #0e4b7c;
+  transform: scale(1.03);
+}
+
+.submit-btn {
+  background-color: #28a745; /* Green color for the final submit */
+}
+
+.submit-btn:hover {
+  background-color: #218838;
+  transform: scale(1.03);
+}
