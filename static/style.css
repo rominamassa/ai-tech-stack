@@ -1,17 +1,12 @@
-/* Modern, app-like design with big, clickable cards.
-   Using #145da0 as the primary accent color.
-*/
-
-/* Background: subtle gradient */
+/* Modern, app-like design with clickable cards and gradient background */
 body {
+  margin: 0;
+  padding: 0;
   font-family: 'Roboto', sans-serif;
   background: linear-gradient(135deg, #145da0 0%, #1e81d3 100%);
   color: #333;
-  margin: 0;
-  padding: 0;
 }
 
-/* Wrapper around the quiz content */
 .quiz-wrapper {
   max-width: 800px;
   margin: 50px auto;
@@ -21,44 +16,35 @@ body {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
 }
 
-/* Headings */
-.quiz-wrapper h1 {
+.quiz-wrapper h1,
+.quiz-wrapper h2 {
   text-align: center;
   color: #145da0;
-  margin-bottom: 30px;
 }
 
-.quiz-wrapper h2 {
-  margin-bottom: 20px;
-  color: #145da0;
-}
-
-/* Steps hidden by default, active step is shown */
-.step {
-  display: none;
-}
-.step.active {
-  display: block;
-}
-
-/* Each question block */
 .question {
   margin-bottom: 30px;
 }
 
-.question p {
+.question-text {
   font-size: 18px;
   margin-bottom: 15px;
   font-weight: 500;
 }
 
-/* Option Cards */
-.option-card {
-  position: relative;
-  margin-bottom: 15px;
+/* Options grid: Adjust flex-wrap for responsiveness */
+.options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
 }
 
-/* Hide the radio input but keep it accessible */
+.option-card {
+  flex: 1 1 calc(50% - 15px);
+  position: relative;
+}
+
+/* Hide radio inputs while keeping them accessible */
 .option-card input[type="radio"] {
   position: absolute;
   opacity: 0;
@@ -75,20 +61,20 @@ body {
   cursor: pointer;
   transition: all 0.3s ease;
   font-size: 16px;
-  font-weight: 400;
+  text-align: center;
 }
 
-/* Hover effect */
+/* Hover effect for labels */
 .option-card label:hover {
   background: #eef6ff;
 }
 
-/* When selected */
+/* Selected option styling */
 .option-card input[type="radio"]:checked + label {
   background: #145da0;
   color: #fff;
   border-color: #145da0;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transform: scale(1.02);
 }
 
@@ -102,4 +88,23 @@ body {
 button {
   background-color: #145da0;
   color: #fff;
-  border: none
+  border: none;
+  border-radius: 6px;
+  padding: 12px 25px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s, transform 0.3s;
+}
+
+button:hover {
+  background-color: #0e4b7c;
+  transform: scale(1.03);
+}
+
+.submit-btn {
+  background-color: #28a745;
+}
+
+.submit-btn:hover {
+  background-color: #218838;
+}
