@@ -1,15 +1,14 @@
-/* 
-  Modern, app-like design with big, clickable cards.
-  Using #145da0 as the primary accent color.
+/* Modern, app-like design with big, clickable cards.
+   Using #145da0 as the primary accent color.
 */
 
 /* Background: subtle gradient */
 body {
-  margin: 0;
-  padding: 0;
   font-family: 'Roboto', sans-serif;
   background: linear-gradient(135deg, #145da0 0%, #1e81d3 100%);
   color: #333;
+  margin: 0;
+  padding: 0;
 }
 
 /* Wrapper around the quiz content */
@@ -19,7 +18,7 @@ body {
   background: #fff;
   border-radius: 8px;
   padding: 30px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
 }
 
 /* Headings */
@@ -59,8 +58,12 @@ body {
   margin-bottom: 15px;
 }
 
+/* Hide the radio input but keep it accessible */
 .option-card input[type="radio"] {
-  display: none; /* Hide the original radio input */
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
 
 .option-card label {
@@ -80,7 +83,7 @@ body {
   background: #eef6ff;
 }
 
-/* When selected (radio is checked) */
+/* When selected */
 .option-card input[type="radio"]:checked + label {
   background: #145da0;
   color: #fff;
@@ -114,7 +117,7 @@ button:hover {
 }
 
 .submit-btn {
-  background-color: #28a745; /* Green color for the final submit */
+  background-color: #28a745; /* Green for final submit */
 }
 
 .submit-btn:hover {
