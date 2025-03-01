@@ -3,12 +3,12 @@
 <div class="quiz-wrapper">
   <h1>AI Marketing Stack Quiz</h1>
   <form id="quizForm" method="post" action="{{ url_for('submit') }}">
+    
     <!-- STEP 1 -->
     <div class="step active">
-      <h2>Design & Content Creation</h2>
-      <!-- Question 1 -->
+      <h2>Step 1 of 9</h2>
       <div class="question">
-        <p class="question-text">1. What primary tool do you use for design work?</p>
+        <p class="question-text">What primary tool do you use for design work?</p>
         <div class="options">
           <div class="option-card">
             <input type="radio" id="q1a" name="q1" value="0" required>
@@ -28,9 +28,17 @@
           </div>
         </div>
       </div>
-      <!-- Question 2 -->
+      <div class="nav-buttons">
+        <!-- No 'Previous' button on step 1 -->
+        <button type="button" class="next-btn">Next</button>
+      </div>
+    </div>
+    
+    <!-- STEP 2 -->
+    <div class="step">
+      <h2>Step 2 of 9</h2>
       <div class="question">
-        <p class="question-text">2. How do you generate written content?</p>
+        <p class="question-text">How do you generate written content?</p>
         <div class="options">
           <div class="option-card">
             <input type="radio" id="q2a" name="q2" value="0" required>
@@ -51,16 +59,16 @@
         </div>
       </div>
       <div class="nav-buttons">
+        <button type="button" class="prev-btn">Previous</button>
         <button type="button" class="next-btn">Next</button>
       </div>
     </div>
-    
-    <!-- STEP 2 -->
+
+    <!-- STEP 3 -->
     <div class="step">
-      <h2>Email & Communication</h2>
-      <!-- Question 3 -->
+      <h2>Step 3 of 9</h2>
       <div class="question">
-        <p class="question-text">3. How do you send and manage marketing emails?</p>
+        <p class="question-text">How do you send and manage marketing emails?</p>
         <div class="options">
           <div class="option-card">
             <input type="radio" id="q3a" name="q3" value="0" required>
@@ -80,9 +88,17 @@
           </div>
         </div>
       </div>
-      <!-- Question 4 -->
+      <div class="nav-buttons">
+        <button type="button" class="prev-btn">Previous</button>
+        <button type="button" class="next-btn">Next</button>
+      </div>
+    </div>
+
+    <!-- STEP 4 -->
+    <div class="step">
+      <h2>Step 4 of 9</h2>
       <div class="question">
-        <p class="question-text">4. What do you use for team communication?</p>
+        <p class="question-text">What do you use for team communication?</p>
         <div class="options">
           <div class="option-card">
             <input type="radio" id="q4a" name="q4" value="0" required>
@@ -107,15 +123,132 @@
         <button type="button" class="next-btn">Next</button>
       </div>
     </div>
-    
-    <!-- (Repeat similar structure for additional steps) -->
-    
-    <!-- STEP 5 (Final Step) -->
+
+    <!-- STEP 5 -->
     <div class="step">
-      <h2>AI Adoption & Business Intelligence</h2>
-      <!-- Question 9 -->
+      <h2>Step 5 of 9</h2>
       <div class="question">
-        <p class="question-text">9. How do you track customer behavior and predict trends?</p>
+        <p class="question-text">What platform do you use for scheduling social posts?</p>
+        <div class="options">
+          <div class="option-card">
+            <input type="radio" id="q5a" name="q5" value="0" required>
+            <label for="q5a">Direct manual posting</label>
+          </div>
+          <div class="option-card">
+            <input type="radio" id="q5b" name="q5" value="3">
+            <label for="q5b">Hootsuite, Buffer</label>
+          </div>
+          <div class="option-card">
+            <input type="radio" id="q5c" name="q5" value="5">
+            <label for="q5c">Sprout Social, HubSpot, Metricool</label>
+          </div>
+          <div class="option-card">
+            <input type="radio" id="q5d" name="q5" value="10">
+            <label for="q5d">Persado, ChatGPT-powered captions</label>
+          </div>
+        </div>
+      </div>
+      <div class="nav-buttons">
+        <button type="button" class="prev-btn">Previous</button>
+        <button type="button" class="next-btn">Next</button>
+      </div>
+    </div>
+
+    <!-- STEP 6 -->
+    <div class="step">
+      <h2>Step 6 of 9</h2>
+      <div class="question">
+        <p class="question-text">How do you monitor your brand’s social reputation?</p>
+        <div class="options">
+          <div class="option-card">
+            <input type="radio" id="q6a" name="q6" value="0" required>
+            <label for="q6a">Manually check social media</label>
+          </div>
+          <div class="option-card">
+            <input type="radio" id="q6b" name="q6" value="3">
+            <label for="q6b">Google Alerts, basic keyword tracking</label>
+          </div>
+          <div class="option-card">
+            <input type="radio" id="q6c" name="q6" value="5">
+            <label for="q6c">Brandwatch, Sprinklr, Talkwalker</label>
+          </div>
+          <div class="option-card">
+            <input type="radio" id="q6d" name="q6" value="10">
+            <label for="q6d">6sense, Crayon, AI-driven competitive intelligence</label>
+          </div>
+        </div>
+      </div>
+      <div class="nav-buttons">
+        <button type="button" class="prev-btn">Previous</button>
+        <button type="button" class="next-btn">Next</button>
+      </div>
+    </div>
+
+    <!-- STEP 7 -->
+    <div class="step">
+      <h2>Step 7 of 9</h2>
+      <div class="question">
+        <p class="question-text">How do you set up and optimize ad campaigns?</p>
+        <div class="options">
+          <div class="option-card">
+            <input type="radio" id="q7a" name="q7" value="0" required>
+            <label for="q7a">Manually create ads and set bids</label>
+          </div>
+          <div class="option-card">
+            <input type="radio" id="q7b" name="q7" value="3">
+            <label for="q7b">Google Ads Manager, Meta Ads</label>
+          </div>
+          <div class="option-card">
+            <input type="radio" id="q7c" name="q7" value="5">
+            <label for="q7c">Google Performance Max, Meta Advantage+</label>
+          </div>
+          <div class="option-card">
+            <input type="radio" id="q7d" name="q7" value="10">
+            <label for="q7d">AI-driven ad strategies</label>
+          </div>
+        </div>
+      </div>
+      <div class="nav-buttons">
+        <button type="button" class="prev-btn">Previous</button>
+        <button type="button" class="next-btn">Next</button>
+      </div>
+    </div>
+
+    <!-- STEP 8 -->
+    <div class="step">
+      <h2>Step 8 of 9</h2>
+      <div class="question">
+        <p class="question-text">How do you handle audience targeting?</p>
+        <div class="options">
+          <div class="option-card">
+            <input type="radio" id="q8a" name="q8" value="0" required>
+            <label for="q8a">Manually define audiences</label>
+          </div>
+          <div class="option-card">
+            <input type="radio" id="q8b" name="q8" value="3">
+            <label for="q8b">Facebook & Google Ads presets</label>
+          </div>
+          <div class="option-card">
+            <input type="radio" id="q8c" name="q8" value="5">
+            <label for="q8c">AI-assisted segmentation</label>
+          </div>
+          <div class="option-card">
+            <input type="radio" id="q8d" name="q8" value="10">
+            <label for="q8d">Predictive AI audience modeling</label>
+          </div>
+        </div>
+      </div>
+      <div class="nav-buttons">
+        <button type="button" class="prev-btn">Previous</button>
+        <button type="button" class="next-btn">Next</button>
+      </div>
+    </div>
+
+    <!-- STEP 9 -->
+    <div class="step">
+      <h2>Step 9 of 9</h2>
+      <div class="question">
+        <p class="question-text">How do you track customer behavior and predict trends?</p>
         <div class="options">
           <div class="option-card">
             <input type="radio" id="q9a" name="q9" value="0" required>
@@ -140,6 +273,7 @@
         <button type="submit" class="submit-btn">Submit Quiz</button>
       </div>
     </div>
+    
   </form>
 </div>
 {% endblock %}

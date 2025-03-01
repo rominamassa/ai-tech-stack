@@ -1,120 +1,122 @@
-/* Overall Page Styles */
+/* Modern, app-like design with clickable cards, single question per step */
 body {
-  background-color: #e9f1f7;
-  font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #145da0 0%, #1e81d3 100%);
+  color: #333;
 }
 
-.container {
+.quiz-wrapper {
   max-width: 800px;
-  margin: 40px auto;
-  background-color: #fff;
-  padding: 40px;
+  margin: 50px auto;
+  background: #fff;
   border-radius: 8px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
 }
 
-/* Headings */
-h1 {
+.quiz-wrapper h1 {
   text-align: center;
   color: #145da0;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
-h2 {
+.quiz-wrapper h2 {
+  margin-bottom: 20px;
   color: #145da0;
-  margin-bottom: 15px;
+  text-align: center;
 }
 
-/* Question Blocks */
-.question {
-  margin-bottom: 20px;
-}
-
-.question p {
-  font-size: 18px;
-  color: #333;
-  margin-bottom: 10px;
-}
-
-/* Custom Radio Button Styles */
-input[type="radio"] {
-  display: none;
-}
-
-.custom-label {
-  position: relative;
-  display: block;
-  cursor: pointer;
-  font-size: 16px;
-  color: #555;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  padding: 12px 15px 12px 50px;
-  margin-bottom: 12px;
-  transition: background-color 0.3s, border-color 0.3s;
-}
-
-.custom-label:hover {
-  background-color: #f1faff;
-  border-color: #145da0;
-}
-
-.custom-label::before {
-  content: "";
-  position: absolute;
-  left: 15px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 20px;
-  height: 20px;
-  border: 2px solid #145da0;
-  border-radius: 50%;
-  background-color: #fff;
-}
-
-input[type="radio"]:checked + .custom-label::before {
-  background-color: #145da0;
-}
-
-/* Multi-step Form */
+/* Steps hidden by default, only one step is visible at a time */
 .step {
   display: none;
 }
-
 .step.active {
   display: block;
 }
 
-.buttons {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
+.question {
+  margin-bottom: 30px;
 }
 
-/* Button Styles */
-button, .submit-btn {
+.question-text {
+  font-size: 18px;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+/* Options container - just 4 items here, but let's keep it flexible */
+.options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.option-card {
+  flex: 1 1 calc(50% - 15px);
+  position: relative;
+}
+
+/* Hide the radio inputs but keep them accessible to label */
+.option-card input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.option-card label {
+  display: block;
+  background: #f8f8f8;
+  border-radius: 6px;
+  padding: 15px 20px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 16px;
+  text-align: center;
+}
+
+.option-card label:hover {
+  background: #eef6ff;
+}
+
+.option-card input[type="radio"]:checked + label {
+  background: #145da0;
+  color: #fff;
+  border-color: #145da0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transform: scale(1.02);
+}
+
+/* Navigation Buttons */
+.nav-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+button {
   background-color: #145da0;
   color: #fff;
   border: none;
-  padding: 12px 20px;
-  border-radius: 4px;
-  font-size: 16px;
+  border-radius: 6px;
+  padding: 12px 25px;
   cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-button:hover, .submit-btn:hover {
-  background-color: #0e4b7c;
-}
-
-/* Textarea for Share Message */
-textarea {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
   font-size: 16px;
-  color: #333;
+  transition: background 0.3s, transform 0.3s;
+}
+
+button:hover {
+  background-color: #0e4b7c;
+  transform: scale(1.03);
+}
+
+.submit-btn {
+  background-color: #28a745;
+}
+
+.submit-btn:hover {
+  background-color: #218838;
 }

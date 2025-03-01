@@ -98,13 +98,4 @@ button {
 
 button:hover {
   background-color: #0e4b7c;
-  transform: scale(1.03);
-}
-
-.submit-btn {
-  background-color: #28a745;
-}
-
-.submit-btn:hover {
-  background-color: #218838;
-}
+  trans

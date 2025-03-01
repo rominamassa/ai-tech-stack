@@ -3,17 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <title>AI Marketing Stack Quiz</title>
+  <!-- Ensures the quiz is responsive on mobile devices -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Links to your main CSS file -->
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <!-- Defer attribute ensures the DOM is loaded before running script.js -->
   <script defer src="{{ url_for('static', filename='js/script.js') }}"></script>
-  <style>
-    body {
-      font-family: 'Roboto', sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-  </style>
 </head>
 <body>
+  <!-- Where your page-specific content (index.html, etc.) will be inserted -->
   {% block content %}{% endblock %}
 </body>
 </html>
