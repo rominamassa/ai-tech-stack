@@ -1,0 +1,120 @@
+/* Overall Page Styles */
+body {
+  background-color: #e9f1f7;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 40px auto;
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Headings */
+h1 {
+  text-align: center;
+  color: #145da0;
+  margin-bottom: 20px;
+}
+
+h2 {
+  color: #145da0;
+  margin-bottom: 15px;
+}
+
+/* Question Blocks */
+.question {
+  margin-bottom: 20px;
+}
+
+.question p {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Custom Radio Button Styles */
+input[type="radio"] {
+  display: none;
+}
+
+.custom-label {
+  position: relative;
+  display: block;
+  cursor: pointer;
+  font-size: 16px;
+  color: #555;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 12px 15px 12px 50px;
+  margin-bottom: 12px;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.custom-label:hover {
+  background-color: #f1faff;
+  border-color: #145da0;
+}
+
+.custom-label::before {
+  content: "";
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  border: 2px solid #145da0;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+input[type="radio"]:checked + .custom-label::before {
+  background-color: #145da0;
+}
+
+/* Multi-step Form */
+.step {
+  display: none;
+}
+
+.step.active {
+  display: block;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+/* Button Styles */
+button, .submit-btn {
+  background-color: #145da0;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover, .submit-btn:hover {
+  background-color: #0e4b7c;
+}
+
+/* Textarea for Share Message */
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  color: #333;
+}

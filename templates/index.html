@@ -1,0 +1,205 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="quiz-wrapper">
+  <h1>AI Marketing Stack Quiz</h1>
+  <form id="quizForm" method="post" action="{{ url_for('submit') }}">
+    <!-- STEP 1 -->
+    <div class="step active">
+      <h2>Design & Content Creation</h2>
+      <!-- Question 1 -->
+      <div class="question">
+        <p>1. What primary tool do you use for design work?</p>
+        <div class="option-card">
+          <input type="radio" id="q1a" name="q1" value="0" required>
+          <label for="q1a">Microsoft PowerPoint / Paint / Basic Editors</label>
+        </div>
+        <div class="option-card">
+          <input type="radio" id="q1b" name="q1" value="3">
+          <label for="q1b">Adobe Photoshop / Illustrator</label>
+        </div>
+        <div class="option-card">
+          <input type="radio" id="q1c" name="q1" value="5">
+          <label for="q1c">Canva, Adobe Express</label>
+        </div>
+        <div class="option-card">
+          <input type="radio" id="q1d" name="q1" value="10">
+          <label for="q1d">Adobe Firefly, Runway ML, MidJourney, DALL·E</label>
+        </div>
+      </div>
+
+      <!-- Question 2 -->
+      <div class="question">
+        <p>2. How do you generate written content?</p>
+        <div class="option-card">
+          <input type="radio" id="q2a" name="q2" value="0" required>
+          <label for="q2a">Manually write everything</label>
+        </div>
+        <div class="option-card">
+          <input type="radio" id="q2b" name="q2" value="3">
+          <label for="q2b">Grammarly or Hemingway</label>
+        </div>
+        <div class="option-card">
+          <input type="radio" id="q2c" name="q2" value="5">
+          <label for="q2c">Copy.ai, Jasper, ChatGPT</label>
+        </div>
+        <div class="option-card">
+          <input type="radio" id="q2d" name="q2" value="10">
+          <label for="q2d">Fully AI-driven content pipelines</label>
+        </div>
+      </div>
+
+      <div class="nav-buttons">
+        <button type="button" class="next-btn">Next</button>
+      </div>
+    </div>
+
+    <!-- STEP 2 -->
+    <div class="step">
+      <h2>Email & Communication</h2>
+      <!-- Question 3 -->
+      <div class="question">
+        <p>3. How do you send and manage marketing emails?</p>
+        <div class="option-card">
+          <input type="radio" id="q3a" name="q3" value="0" required>
+          <label for="q3a">Microsoft Outlook / Gmail</label>
+        </div>
+        <div class="option-card">
+          <input type="radio" id="q3b" name="q3" value="3">
+          <label for="q3b">Mailchimp, Constant Contact, Zoho</label>
+        </div>
+        <div class="option-card">
+          <input type="radio" id="q3c" name="q3" value="5">
+          <label for="q3c">HubSpot, Marketo, ActiveCampaign</label>
+        </div>
+        <div class="option-card">
+          <input type="radio" id="q3d" name="q3" value="10">
+          <label for="q3d">Klaviyo, Iterable, Salesforce Einstein AI</label>
+        </div>
+      </div>
+
+      <!-- Question 4 -->
+      <div class="question">
+        <p>4. What do you use for team communication?</p>
+        <div class="option-card">
+          <input type="radio" id="q4a" name="q4" value="0" required>
+          <label for="q4a">Email-only</label>
+        </div>
+        <div class="option-card">
+          <input type="radio" id="q4b" name="q4" value="3">
+          <label for="q4b">Slack, Microsoft Teams</label>
+        </div>
+        <div class="option-card">
+          <input type="radio" id="q4c" name="q4" value="5">
+          <label for="q4c">Zoom AI, Notion AI, Slack AI Assistants</label>
+        </div>
+        <div class="option-card">
+          <input type="radio" id="q4d" name="q4" value="10">
+          <label for="q4d">Hyper-personalized AI-driven workflows</label>
+        </div>
+      </div>
+
+      <div class="nav-buttons">
+        <button type="button" class="prev-btn">Previous</button>
+        <button type="button" class="next-btn">Next</button>
+      </div>
+    </div>
+
+    <!-- STEP 3 -->
+    <div class="step">
+      <h2>Social Media & Listening</h2>
+      <!-- Question 5 -->
+      <div class="question">
+        <p>5. What platform do you use for scheduling social posts?</p>
+        <div class="option-card">
+          <input type="radio" id="q5a" name="q5" value="0" required>
+          <label for="q5a">Direct manual posting</label>
+        </div>
+        <div class="option-card">
+          <input type="radio" id="q5b" name="q5" value="3">
+          <label for="q5b">Hootsuite, Buffer</label>
+        </div>
+        <div class="option-card">
+          <input type="radio" id="q5c" name="q5" value="5">
+          <label for="q5c">Sprout Social, HubSpot, Metricool</label>
+        </div>
+        <div class="option-card">
+          <input type="radio" id="q5d" name="q5" value="10">
+          <label for="q5d">Persado, ChatGPT-powered captions</label>
+        </div>
+      </div>
+
+      <!-- Question 6 -->
+      <div class="question">
+        <p>6. How do you monitor your brand’s social reputation?</p>
+        <div class="option-card">
+          <input type="radio" id="q6a" name="q6" value="0" required>
+          <label for="q6a">Manually check social media</label>
+        </div>
+        <div class="option-card">
+          <input type="radio" id="q6b" name="q6" value="3">
+          <label for="q6b">Google Alerts, basic keyword tracking</label>
+        </div>
+        <div class="option-card">
+          <input type="radio" id="q6c" name="q6" value="5">
+          <label for="q6c">Brandwatch, Sprinklr, Talkwalker</label>
+        </div>
+        <div class="option-card">
+          <input type="radio" id="q6d" name="q6" value="10">
+          <label for="q6d">6sense, Crayon, AI-driven competitive intelligence</label>
+        </div>
+      </div>
+
+      <div class="nav-buttons">
+        <button type="button" class="prev-btn">Previous</button>
+        <button type="button" class="next-btn">Next</button>
+      </div>
+    </div>
+
+    <!-- STEP 4 -->
+    <div class="step">
+      <h2>Advertising & Targeting</h2>
+      <!-- Question 7 -->
+      <div class="question">
+        <p>7. How do you set up and optimize ad campaigns?</p>
+        <div class="option-card">
+          <input type="radio" id="q7a" name="q7" value="0" required>
+          <label for="q7a">Manually create ads and set bids</label>
+        </div>
+        <div class="option-card">
+          <input type="radio" id="q7b" name="q7" value="3">
+          <label for="q7b">Google Ads Manager, Meta Ads</label>
+        </div>
+        <div class="option-card">
+          <input type="radio" id="q7c" name="q7" value="5">
+          <label for="q7c">Google Performance Max, Meta Advantage+</label>
+        </div>
+        <div class="option-card">
+          <input type="radio" id="q7d" name="q7" value="10">
+          <label for="q7d">AI-driven ad strategies</label>
+        </div>
+      </div>
+
+      <!-- Question 8 -->
+      <div class="question">
+        <p>8. How do you handle audience targeting?</p>
+        <div class="option-card">
+          <input type="radio" id="q8a" name="q8" value="0" required>
+          <label for="q8a">Manually define audiences</label>
+        </div>
+        <div class="option-card">
+          <input type="radio" id="q8b" name="q8" value="3">
+          <label for="q8b">Facebook & Google Ads presets</label>
+        </div>
+        <div class="option-card">
+          <input type="radio" id="q8c" name="q8" value="5">
+          <label for="q8c">AI-assisted segmentation</label>
+        </div>
+        <div class="option-card">
+          <input type="radio" id="q8d" name="q8" value="10">
+          <label for="q8d">Predictive AI audience modeling</label>
+        </div>
+      </div>
+
+      <div class="nav-buttons">
+        <button type="button" class="prev-btn">Previous</button>
+        <button type="button" class="next-btn">Next</butt

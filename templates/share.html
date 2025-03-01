@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Share Your Results</h1>
+<p>Copy the text below to share on LinkedIn:</p>
+<textarea rows="4" cols="50" readonly>{{ share_message }}</textarea>
+<br>
+<a href="{{ url_for('results') }}">Back to Results</a>
+{% endblock %}

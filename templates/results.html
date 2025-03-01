@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Your AI Marketing Stack Results</h1>
+<p><strong>Total Score:</strong> {{ score }} / 90</p>
+<p><strong>Category:</strong> {{ category }}</p>
+<p><strong>Insights & Recommendations:</strong> {{ recommendation }}</p>
+<a href="{{ url_for('share', score=score) }}" class="share-button">Share to LinkedIn</a>
+<a href="{{ url_for('download', score=score, category=category, recommendation=recommendation) }}" class="download-button">Download Results as PDF</a>
+{% endblock %}

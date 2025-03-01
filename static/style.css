@@ -1,0 +1,104 @@
+/* 
+  Modern, app-like design with big, clickable cards.
+  Using #145da0 as the primary accent color.
+*/
+
+/* Background: subtle gradient */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #145da0 0%, #1e81d3 100%);
+  color: #333;
+}
+
+/* Wrapper around the quiz content */
+.quiz-wrapper {
+  max-width: 800px;
+  margin: 50px auto;
+  background: #fff;
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+}
+
+/* Headings */
+.quiz-wrapper h1 {
+  text-align: center;
+  color: #145da0;
+  margin-bottom: 30px;
+}
+
+.quiz-wrapper h2 {
+  margin-bottom: 20px;
+  color: #145da0;
+}
+
+/* Steps hidden by default, active step is shown */
+.step {
+  display: none;
+}
+.step.active {
+  display: block;
+}
+
+/* Each question block */
+.question {
+  margin-bottom: 30px;
+}
+
+.question p {
+  font-size: 18px;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+/* Option Cards */
+.option-card {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.option-card input[type="radio"] {
+  display: none; /* Hide the original radio input */
+}
+
+.option-card label {
+  display: block;
+  background: #f8f8f8;
+  border-radius: 6px;
+  padding: 15px 20px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+/* Hover effect */
+.option-card label:hover {
+  background: #eef6ff;
+}
+
+/* When selected (radio is checked) */
+.option-card input[type="radio"]:checked + label {
+  background: #145da0;
+  color: #fff;
+  border-color: #145da0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transform: scale(1.02);
+}
+
+/* Navigation buttons */
+.nav-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+button {
+  background-color: #145da0;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 
