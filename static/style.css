@@ -1,4 +1,4 @@
-/* Modern, app-like design with clickable cards and gradient background */
+/* Modern, app-like design with clickable cards, centered frame, and responsive layout */
 body {
   margin: 0;
   padding: 0;
@@ -13,13 +13,26 @@ body {
   background: #fff;
   border-radius: 8px;
   padding: 30px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
 }
 
-.quiz-wrapper h1,
-.quiz-wrapper h2 {
+.quiz-wrapper h1 {
   text-align: center;
   color: #145da0;
+  margin-bottom: 30px;
+}
+
+.quiz-wrapper h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #145da0;
+}
+
+.step {
+  display: none;
+}
+.step.active {
+  display: block;
 }
 
 .question {
@@ -32,7 +45,6 @@ body {
   font-weight: 500;
 }
 
-/* Options grid: Adjust flex-wrap for responsiveness */
 .options {
   display: flex;
   flex-wrap: wrap;
@@ -64,21 +76,19 @@ body {
   text-align: center;
 }
 
-/* Hover effect for labels */
 .option-card label:hover {
   background: #eef6ff;
 }
 
-/* Selected option styling */
 .option-card input[type="radio"]:checked + label {
   background: #145da0;
   color: #fff;
   border-color: #145da0;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   transform: scale(1.02);
 }
 
-/* Navigation buttons */
+/* Navigation Buttons */
 .nav-buttons {
   display: flex;
   justify-content: space-between;
@@ -98,4 +108,13 @@ button {
 
 button:hover {
   background-color: #0e4b7c;
-  trans
+  transform: scale(1.03);
+}
+
+.submit-btn {
+  background-color: #28a745;
+}
+
+.submit-btn:hover {
+  background-color: #218838;
+}

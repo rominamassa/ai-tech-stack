@@ -1,9 +1,100 @@
 {% extends "base.html" %}
 {% block content %}
-<h1>Your AI Marketing Stack Results</h1>
-<p><strong>Total Score:</strong> {{ score }} / 90</p>
-<p><strong>Category:</strong> {{ category }}</p>
-<p><strong>Insights & Recommendations:</strong> {{ recommendation }}</p>
-<a href="{{ url_for('share', score=score) }}" class="share-button">Share to LinkedIn</a>
-<a href="{{ url_for('download', score=score, category=category, recommendation=recommendation) }}" class="download-button">Download Results as PDF</a>
+<div class="results-wrapper">
+  <h1>Your AI Marketing Stack Results</h1>
+  <p class="result-score">Total Score: <strong>{{ score }}</strong> / 90</p>
+  <p class="result-category">Category: <strong>{{ category }}</strong></p>
+  <p class="result-insights">{{ recommendation }}</p>
+  
+  <!-- Chart Container -->
+  <canvas id="resultsChart" width="400" height="400"></canvas>
+  
+  <!-- Additional Analysis (Placeholder) -->
+  <div class="analysis">
+    <h2>Detailed Analysis</h2>
+    <p>Your answers distribution shows how much you rely on traditional tools versus AI-powered solutions. (This is a placeholder for more detailed analysis.)</p>
+  </div>
+  
+  <div class="results-buttons">
+    <a href="{{ url_for('share', score=score) }}" class="share-button">Share on LinkedIn</a>
+    <a href="{{ url_for('download', score=score, category=category, recommendation=recommendation) }}" class="download-button">Download Results as PDF</a>
+  </div>
+</div>
+
+<!-- Include Chart.js from CDN -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+// Example: Create a pie chart showing the distribution of your answers.
+// For demonstration, we use dummy data. In your real app, you might pass actual values.
+const ctx = document.getElementById('resultsChart').getContext('2d');
+const resultsChart = new Chart(ctx, {
+    type: 'pie',
+    data: {
+        labels: ['Traditional', 'Basic Automation', 'AI-Assisted', 'Fully AI-Powered'],
+        datasets: [{
+            label: 'Answer Distribution',
+            data: [{{ score | int }}, {{ 90 - score | int }}, 0, 0], // Replace with real breakdown if available
+            backgroundColor: [
+                '#f8d7da',
+                '#fff3cd',
+                '#d1ecf1',
+                '#c3e6cb'
+            ],
+            borderColor: [
+                '#721c24',
+                '#856404',
+                '#0c5460',
+                '#155724'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: false
+    }
+});
+</script>
+
+<style>
+.results-wrapper {
+  max-width: 800px;
+  margin: 50px auto;
+  background: #145da0;
+  padding: 30px;
+  border-radius: 8px;
+  color: #fff;
+  text-align: center;
+}
+.results-wrapper h1,
+.results-wrapper h2 {
+  color: #fff;
+}
+.result-score, .result-category, .result-insights {
+  font-size: 18px;
+  margin: 10px 0;
+}
+.results-buttons a {
+  display: inline-block;
+  background: #fff;
+  color: #145da0;
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+.results-buttons a:hover {
+  background: #e0e0e0;
+}
+#resultsChart {
+  margin: 20px auto;
+  max-width: 400px;
+  height: 400px;
+}
+.analysis {
+  margin-top: 20px;
+  text-align: left;
+}
+</style>
 {% endblock %}
